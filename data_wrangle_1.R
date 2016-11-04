@@ -16,3 +16,5 @@ refine_tbl3 <- mutate(refine_tbl2, Product.category =
                                ifelse(grepl("v", Product.code), "TV",
                                ifelse(grepl("x", Product.code), "Laptop",
                                ifelse(grepl("q", Product.code), "Tablet", "NA")))))
+
+refine_tbl4 <- unite(refine_tbl3, address, city, country, sep=",")

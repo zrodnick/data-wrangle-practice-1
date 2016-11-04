@@ -24,3 +24,8 @@ refine_tbl5 <- mutate(refine_tbl5, company_akzo = ifelse(company =="akzo", 1, 0)
 refine_tbl5 <- mutate(refine_tbl5, company_van_houten = ifelse(company =="van houten", 1, 0))
 refine_tbl5 <- mutate(refine_tbl5, company_unilever = ifelse(company =="unilever", 1, 0))
 
+refine_tbl5 <- rename(refine_tbl5, product_code = Product.code)
+refine_tbl5 <- rename(refine_tbl5, product_category = Product.category)
+
+
+refine_tbl5 <- mutate(refine_tbl5, product_smartphone = ifelse(product_code =="p", 1, 0))

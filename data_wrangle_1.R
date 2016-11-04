@@ -5,7 +5,7 @@ refine_raw <- read.csv("refine.csv")
 refine_tbl <- tbl_df(refine_raw)
 
 refine_tbl$company <- tolower(refine_tbl$company)
-refine_tbl$company <- gsub("phlips|phillps|phlips|phllips", "philips", refine_tbl$company)
+refine_tbl$company <- gsub("phillips|philips|phllips|phillps|fillips|phlips", "philips", refine_tbl$company)
 refine_tbl$company <- gsub("ak zo|akz0", "akzo", refine_tbl$company)
 refine_tbl$company <- gsub("unilver", "unilever", refine_tbl$company)
 
@@ -20,3 +20,7 @@ refine_tbl3 <- mutate(refine_tbl2, Product.category =
 refine_tbl4 <- unite(refine_tbl3, full_address, address, city, country, sep=", ")
 
 refine_tbl5 <- mutate(refine_tbl4, company_philips = ifelse(company =="philips", 1, 0))
+refine_tbl5 <- mutate(refine_tbl5, company_akzo = ifelse(company =="akzo", 1, 0))
+refine_tbl5 <- mutate(refine_tbl5, company_van_houten = ifelse(company =="van houten", 1, 0))
+refine_tbl5 <- mutate(refine_tbl5, company_unilever = ifelse(company =="unilever", 1, 0))
+

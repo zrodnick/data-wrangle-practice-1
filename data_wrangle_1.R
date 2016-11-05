@@ -29,3 +29,8 @@ refine_tbl5 <- rename(refine_tbl5, product_category = Product.category)
 
 
 refine_tbl5 <- mutate(refine_tbl5, product_smartphone = ifelse(product_code =="p", 1, 0))
+refine_tbl5 <- mutate(refine_tbl5, product_tv = ifelse(product_code =="v", 1, 0))
+refine_tbl5 <- mutate(refine_tbl5, product_laptop = ifelse(product_code =="x", 1, 0))
+refine_tbl5 <- mutate(refine_tbl5, product_tablet = ifelse(product_code =="q", 1, 0))
+
+write.csv(refine_tbl5, file="refine_clean.csv")

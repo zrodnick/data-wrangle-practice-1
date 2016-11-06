@@ -33,4 +33,9 @@ refine_tbl5 <- mutate(refine_tbl5, product_tv = ifelse(product_code =="v", 1, 0)
 refine_tbl5 <- mutate(refine_tbl5, product_laptop = ifelse(product_code =="x", 1, 0))
 refine_tbl5 <- mutate(refine_tbl5, product_tablet = ifelse(product_code =="q", 1, 0))
 
+<<<<<<< HEAD
 write.csv(refine_tbl5, file="refine_clean.csv")
+=======
+refine_clean <- refine_tbl5
+
+>>>>>>> origin/master
